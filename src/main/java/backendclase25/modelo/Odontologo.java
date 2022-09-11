@@ -18,6 +18,7 @@ public class Odontologo {
         this.nombre = nombre;
         this.matricula = matricula;
     }
+    public Odontologo(){}
 
     public Integer getId() {
         return id;
