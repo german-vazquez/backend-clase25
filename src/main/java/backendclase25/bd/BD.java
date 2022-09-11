@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 public class BD {
     private static final String DRIVER="org.h2.Driver";
-    private static final String URL="jdbc:hs:~/clase24";
+    private static final String URL="jdbc:h2:~/clase25";
     private static final String USER="sa";
     private static final String PASS="";
-    private static final String SCRIPT=URL+"; INIT=RUNSCRIPT FROM 'create.sql'";
+    private static final String SCRIPT=URL+";INIT=RUNSCRIPT FROM 'create.sql'";
 
     public static Connection getConnection() throws Exception{
         Class.forName(DRIVER);
