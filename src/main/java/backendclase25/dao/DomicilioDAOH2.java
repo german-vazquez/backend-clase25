@@ -36,7 +36,31 @@ public class DomicilioDAOH2 implements IDao<Domicilio> {
 
     @Override
     public Domicilio buscar(Integer id) {
-        return null;
+        Connection connection=null;
+        Domicilio domicilio=null;
+        try {
+            connection=BD.getConnection();
+            PreparedStatement ps = connection.prepareStatement("select * from domicilios where id =?");
+            ps.setInt(1,id);
+            ResultSet rs= ps.executeQuery();
+            while (rs.next()){
+                domicilio = new Domicilio(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                connection.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return domicilio;
     }
 
     @Override
