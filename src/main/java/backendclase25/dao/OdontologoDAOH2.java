@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OdontologoDAOH2 implements IDao<Odontologo> {
@@ -69,7 +70,7 @@ public class OdontologoDAOH2 implements IDao<Odontologo> {
     @Override
     public List<Odontologo> buscarTodos() {
         Connection connection=null;
-        List<Odontologo> odontologos = null;
+        List<Odontologo> odontologos = new ArrayList<>();
         try {
             connection= BD.getConnection();
             PreparedStatement ps= connection.prepareStatement("select * from odontologos");

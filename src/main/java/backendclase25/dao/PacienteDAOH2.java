@@ -5,6 +5,7 @@ import backendclase25.modelo.Domicilio;
 import backendclase25.modelo.Paciente;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PacienteDAOH2 implements IDao<Paciente>{
@@ -112,7 +113,7 @@ public class PacienteDAOH2 implements IDao<Paciente>{
     @Override
     public List<Paciente> buscarTodos() {
         Connection connection=null;
-        List<Paciente> pacientes= null;
+        List<Paciente> pacientes= new ArrayList<>();
         Domicilio domicilio;
         try{
             DomicilioDAOH2 domicilioDAOH2 = new DomicilioDAOH2();

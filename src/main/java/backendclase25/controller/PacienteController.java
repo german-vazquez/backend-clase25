@@ -3,10 +3,9 @@ package backendclase25.controller;
 import backendclase25.modelo.Paciente;
 import backendclase25.servicio.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/pacientes")
@@ -19,5 +18,9 @@ public class PacienteController {
     @PostMapping
     public Paciente registrarPaciente(@RequestBody Paciente paciente){
         return pacienteService.guardar(paciente);
+    }
+    @GetMapping
+    public List<Paciente> buscarAllPacientes(){
+        return pacienteService.buscarTodos();
     }
 }
