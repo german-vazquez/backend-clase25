@@ -23,4 +23,8 @@ public class PacienteController {
     public List<Paciente> buscarAllPacientes(){
         return pacienteService.buscarTodos();
     }
+    @GetMapping("/{id}")
+    public Paciente buscarPaciente(@PathVariable Integer id){
+        return pacienteService.buscar(id);
+    }
 }

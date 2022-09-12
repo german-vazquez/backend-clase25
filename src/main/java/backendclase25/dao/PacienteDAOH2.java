@@ -18,7 +18,7 @@ public class PacienteDAOH2 implements IDao<Paciente>{
             domicilioDAOH2.guardar(paciente.getDomicilio());
 
             connection= BD.getConnection();
-            PreparedStatement ps= connection.prepareStatement("insert into pacientes(apellido, nombre, email, dni, fecha, domicilio_id) values (?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps= connection.prepareStatement("insert into pacientes (apellido, nombre, email, dni, fecha, domicilio_id) values (?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, paciente.getApellido());
             ps.setString(2, paciente.getNombre());
             ps.setString(3, paciente.getEmail());

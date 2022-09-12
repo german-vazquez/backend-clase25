@@ -1,6 +1,6 @@
 drop table if exists domicilios;
 
-create table domicilios (id int auto_increment primary key, calle varchar(100)not null, numero int not null, localidad varchar(100)not null, provincia varchar(100) not null);
+create table domicilios (id int auto_increment primary key, calle varchar(100) not null, numero int not null, localidad varchar(100)not null, provincia varchar(100) not null);
 
 drop table if exists pacientes;
 
